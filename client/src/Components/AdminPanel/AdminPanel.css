@@ -1,0 +1,172 @@
+admin-div-main {
+  height: 100vh;
+  float: left;
+}
+.Admin-nav-div {
+  height: 60px;
+}
+
+.Admin-nav {
+  height: 60px;
+  /* background-color:#ff8558; */
+  background-image: linear-gradient(to right, #ff512f, #dd2476);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 50px;
+  justify-content: space-between;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.admin-logo-text {
+  color: white;
+  font-size: 33px;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+}
+.admin-logo-text:hover {
+  font-size: 34px;
+}
+
+.Admin-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+.Admin-details h5 {
+  margin-top: 25px;
+}
+.Admin-content {
+  height: calc(100vh - 80px);
+  padding: 8px;
+}
+
+.admin-subsec-nav {
+  display: flex;
+  height: 50px;
+  gap: 300px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+.sub-admin {
+  background-color: rgb(230 242 255);
+  height: 30vh;
+  border-radius: 10px;
+}
+.admin-template-sec {
+  margin-top: 10px;
+  background-color: rgb(230 242 255);
+  height: calc(70vh - 90px);
+  border-radius: 10px;
+}
+.admin-template-sec-hadding {
+  height: 50px;
+  align-items: center;
+  margin: 15px 0px 10px;
+  border-radius: 10px;
+}
+.admin-template-sec-hadding h4 {
+  margin: 0;
+}
+
+.admin-subsec-nav-btn-div {
+  display: flex;
+  gap: 10px;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  padding: 0 !important;
+}
+
+.css-ahj2mt-MuiTypography-root {
+  margin-top: 5px !important;
+}
+.create-cat {
+  width: 150px;
+  height: 33px !important;
+  background-color: rgb(255, 152, 114);
+  color: rgb(62, 62, 62) !important;
+  /* background:#ff6748 !important; */
+  background-color: gray;
+  /* background-image: linear-gradient(to right,#ff8067, #ff69ad); */
+  border-radius: 10px !important;
+  border: 1px solid rgb(142, 142, 142) !important;
+}
+
+.create-new-sub {
+  background-color: rgb(255, 255, 255) !important;
+  height: 122px !important;
+  display: flex;
+  align-items: center;
+
+  width: 122px !important;
+  margin: 13px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  border-radius: 7px;
+  padding: 5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.create-new-sub:hover {
+  cursor: pointer;
+}
+.create-new-sub:active {
+  border: 1px solid rgb(154, 154, 154);
+}
+
+.sub-admin-display {
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+}
+.sub-admin-display::-webkit-scrollbar {
+  display: none;
+}
+
+.Add-cat {
+  border: 1px solid rgb(138, 138, 138);
+  padding: 3px 5px;
+  width: 220px;
+  border-radius: 5px;
+}
+.add-btn {
+  margin-bottom: -6px;
+  color: #ff3f19 !important;
+  padding: 2px;
+}
+.add-btn:hover {
+  cursor: pointer;
+}
+.created-subadmins {
+  background-color: rgb(255, 255, 255) !important;
+  height: 122px !important;
+  display: flex;
+  flex-direction: column;
+  margin: 13px;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  width: 122px !important;
+}
+
+.delete-subadmin-btn:hover {
+  cursor: pointer;
+}
+
+.all-form-headminng {
+  padding: 10px 0px 0px 20px;
+}
+
+.all-form-admin-div {
+  padding: 0px 10px;
+  height: 340px;
+  overflow-x: hidden;
+}
+.all-form-admin-div::-webkit-scrollbar {
+  display: none;
+}

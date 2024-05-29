@@ -1,0 +1,128 @@
+.fill-form-main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  height: calc(100vh - 40px);
+}
+
+.fil-section {
+  height: 94vh !important;
+}
+
+.fill-form-name {
+  width: 100%;
+
+  margin: 0px;
+  font-weight: 400;
+  font-size: 32px;
+  color: rgb(79, 79, 79);
+  margin-left: 10px;
+}
+.fill-form-desc {
+  font-size: 16px;
+  font-weight: 400px;
+  color: rgb(79, 79, 79);
+  margin: 0px;
+  margin-left: 10px;
+
+  width: 100%;
+}
+.fill-quetion-header {
+  display: flex;
+  width: 550px;
+  margin-left: 10px;
+  align-items: center;
+}
+.fill-option {
+  margin: 7px;
+}
+.fill-options-div {
+  display: flex;
+  margin-left: 20px;
+}
+.submit-form {
+  border: none;
+  outline: none;
+  width: 140px;
+  background: rgb(255, 255, 255);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(252, 126, 80) !important;
+  border-radius: 5px;
+
+  padding: 10px;
+}
+.submit-form:hover {
+  cursor: pointer;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.submitted-main {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.submitted-div {
+  width: 550px;
+  height: 100px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid rgb(252, 126, 80) !important;
+}
+.text-1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: rgb(79, 79, 79);
+  margin: 10px;
+}
+.text-2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(79, 79, 79);
+  margin: 10px;
+}
+
+.quetionsfill {
+  width: 565px;
+  background-color: white;
+  min-height: 100px;
+  border-radius: 10px !important;
+  margin: 10px 0px !important;
+  border: 3px solid rgb(252, 126, 80) !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.user-detail {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  width: 55%;
+  border: none;
+  outline: none;
+  color: rgb(79, 79, 79);
+  margin: 7px 0px 5px 18px;
+}
+.user-detail:hover {
+  border-bottom: 2px solid rgb(74, 131, 202);
+}
+.user-detail-q1 {
+  margin: 10px 0px -10px 20px;
+  color: rgb(48, 48, 48);
+  font-size: 16px;
+}
+.user-detail-q2 {
+  margin: 2px 0px -10px 20px;
+  color: rgb(48, 48, 48);
+  font-size: 16px;
+}
+.error-m {
+  margin: -4px 0px 5px 36px;
+  font-size: 10px;
+  color: red;
+}

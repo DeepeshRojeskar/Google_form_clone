@@ -1,0 +1,240 @@
+.class-back {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.pr-form-editor {
+  display: flex;
+  width: calc(100% - 10px);
+  justify-content: center;
+  padding: 10px 5px;
+}
+.pr-form-top {
+  width: 200px;
+  background-color: white;
+  border: 1px solid rgb(252, 126, 80);
+  height: 30px;
+  border-radius: 3.6px;
+  padding: 3.6px;
+  gap: 1.8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.pr-form-name {
+  box-sizing: border-box;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 14px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: rgb(79, 79, 79);
+  margin-left: 3px;
+}
+.pr-form-desc {
+  box-sizing: border-box;
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 6.5px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: rgb(79, 79, 79);
+  margin-left: 3px;
+}
+.pr-quetions {
+  width: 205px;
+  background-color: white;
+  min-height: 60px;
+  border-radius: 7px !important;
+  margin: 3px 0px !important;
+  border: 1px solid rgb(252, 126, 80) !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.pr-quetions:hover {
+  cursor: grab;
+}
+.pr-quetions:active {
+  cursor: grabbing;
+}
+.pr-navigation-div {
+  display: flex;
+  justify-content: center;
+  padding-top: 1px;
+}
+.pr-quetion-header {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  min-height: 16px;
+  margin-top: 1px;
+}
+.pr-NumberText {
+  box-sizing: border-box;
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 14px;
+  height: 13px;
+  width: 20px !important;
+  border: none;
+  outline: none;
+  color: rgb(79, 79, 79);
+  margin-left: 3px;
+  margin-top: 1px;
+}
+.pr-questionText {
+  box-sizing: border-box;
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 14.5px;
+  width: 60%;
+  height: 10px;
+  border: none;
+  padding-top: 6px;
+  outline: none;
+  color: rgb(79, 79, 79);
+  margin-left: -35px;
+}
+
+.pr-quetion-header-sec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+.pr-options {
+  display: flex;
+  width: 185px;
+  padding: 1px 5px;
+  justify-content: space-between;
+  height: 15px;
+}
+.pr-in {
+  width: 5px;
+  margin: 0px;
+}
+.pr-Question-Type {
+  margin-top: -1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1px;
+  border: 1px solid black;
+  padding: 1px;
+  height: 6;
+}
+.pr-btn {
+  outline: none;
+  background: none;
+  font-size: 6px;
+  color: rgb(78, 78, 78);
+  font-weight: 400;
+  border: none;
+  width: 30px;
+  height: 6px;
+  border-radius: 1px;
+  padding: 0px;
+}
+.pr-optionText {
+  box-sizing: border-box;
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 14px;
+  height: 9px;
+  border: none;
+  outline: none;
+  width: 73px;
+  color: rgb(79, 79, 79);
+  margin-left: 3px;
+}
+.pr-add-field {
+  color: white !important;
+  font-weight: 700 !important;
+
+  width: 20px !important;
+  height: 20px !important;
+  font-size: 6px !important;
+}
+.pr-slider {
+  font-size: 6px;
+}
+.pr-discText {
+  box-sizing: border-box;
+  font-size: 6px;
+  font-weight: 400;
+  line-height: 11px;
+  width: 50%;
+  height: 10px;
+  border: none;
+  outline: none;
+  color: rgb(79, 79, 79);
+  margin-left: 15px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgb(141, 141, 141);
+}
+.pr-form-top {
+  width: 185px;
+  background-color: white;
+  border: 1px solid rgb(252, 126, 80);
+  height: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pr-form-top-add {
+  height: 80px;
+}
+.questionMain {
+  position: relative;
+  transition: all 0.3s;
+}
+.questionNumber h2 {
+  position: absolute;
+  color: white;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9b9b9b8c;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.questionMain:active .questionNumber h2 {
+  display: none;
+}
+.questionMain:hover .questionNumber h2 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pr-new-field {
+  padding: 1px;
+  width: 300px;
+  font-size: 5px !important;
+  margin: 1px 0px 0.8px 6px;
+}
+
+.pr-new-field-btn {
+  width: 60px;
+  font-size: 6px !important;
+}

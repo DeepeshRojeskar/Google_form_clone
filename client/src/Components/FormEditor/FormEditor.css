@@ -1,0 +1,112 @@
+.form-content {
+  display: flex;
+  justify-content: space-between;
+}
+.form-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-left: 10px;
+}
+.form-logo-txt {
+  color: white;
+  font-size: 33px;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+}
+.form-logo-txt:hover {
+  font-size: 34px;
+}
+.form-logo-txt {
+  color: white;
+  font-size: 32px;
+}
+.subadmin-name {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 22px;
+}
+
+.left-box {
+  width: 450px;
+  padding: 0px 0px;
+  display: flex;
+  gap: 15px;
+}
+.right-box {
+  width: 450px;
+  padding: 40px 0px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: start;
+}
+
+.add-image {
+  width: 130px;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  background-color: white !important;
+  color: rgb(62, 62, 62) !important;
+}
+.create-form {
+  width: 150px;
+  height: 33px !important;
+  background-color: rgb(255, 152, 114);
+  color: rgb(62, 62, 62) !important;
+  /* background:#ff6748 !important; */
+  background-image: linear-gradient(to right, #ff8067, #ff69ad);
+  border-radius: 5px !important;
+  border: 1px solid rgb(142, 142, 142) !important;
+}
+
+.create-form:hover {
+  border: 1px solid rgb(0, 0, 0) !important;
+}
+
+.add-image:hover {
+}
+.css-q8hpuo-MuiFormControl-root {
+  width: 120px !important;
+}
+.inputBBtn {
+  font-size: 13px;
+  margin-bottom: 0px;
+  font-weight: 500 !important;
+}
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  width: 120px;
+  height: 35px;
+  background-image: linear-gradient(to right, #ff8067, #ff69ad);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border: none;
+}
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  margin-top: -10px;
+}
+
+.view-Res {
+  height: 35px !important;
+  border-radius: 5px;
+  color: rgb(85, 85, 85) !important;
+  width: 170px;
+  background-color: white !important;
+}
+.view-Res:hover {
+  border: 1px solid rgb(83, 83, 83) !important;
+}
+
+.pr-div {
+  width: 230px;
+}
+.right-box-div {
+  gap: 15px;
+  display: flex;
+  padding: 40px 0px;
+  width: 200px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+}
