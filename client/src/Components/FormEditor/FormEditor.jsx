@@ -23,6 +23,7 @@ const FormEditor = () => {
 
   const {
     subadmin,
+    admin,
     refresh,
     setRefresh,
     forms,
@@ -32,6 +33,7 @@ const FormEditor = () => {
     subForms,
     res,
     setRes,
+    setAdmin,
     setcategory,
     create,
     setsubAdmin,
@@ -39,14 +41,32 @@ const FormEditor = () => {
   } = formProvider();
   const [img, setimg] = useState(null);
   const [cat, setcat] = useState();
+  const [subcat, setsubcat] = useState([]);
+  useEffect(() => {
+    const ar = subadmin?.user.category.split(",");
+    subadmin ? setsubcat(ar) : setsubcat([]);
+  }, []);
+
   const handleChange = (e) => {
     setcat(e.target.value);
   };
+
+  const handleUploadsImg = async (myFile) => {
+    try {
+      const formData = new FormData();
+      formData.append("myFile", myFile);
+      const data = await axios.post(apiConfig.uplaodImg, formData);
+      setimg(data.data.image);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const handledata = async () => {
     try {
       const config = {
         headers: {
-          Authorization: `Bearer ${subadmin.token}`,
+          Authorization: `Bearer ${subadmin ? subadmin.token : admin.token}`,
           "Content-Type": "application/json",
         },
       };
@@ -74,10 +94,10 @@ const FormEditor = () => {
       }
       setform({
         formid: "",
-        formName: "ram",
-        formDesc: "asdfghjkl",
+        formName: "",
+        formDesc: "",
         formImg: "",
-        formCat: "movies",
+        formCat: "",
         category: category,
       });
       setcategory([
@@ -106,17 +126,27 @@ const FormEditor = () => {
     }
   };
 
-  const handleres = () => {
-    var fr = forms;
-    fr.category = category;
-    setform(fr);
-    console.log(fr);
+  const handleres = async () => {
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${subadmin ? subadmin.token : admin.token}`,
+          "Content-Type": "application/json",
+        },
+      };
+      var fr = forms;
+      fr.category = category;
+      setform(fr);
+      const { data } = await axios.put(apiConfig.updateForm, fr, config);
 
-    navigate(`/fill-form/${fr.formid}`);
+      console.log(fr);
+
+      navigate(`/fill-form/${fr.formid}`);
+    } catch (e) {
+      console.log(e);
+    }
   };
-  useEffect(() => {
-    console.log(subForms);
-  }, [subForms]);
+
   return (
     <div>
       <div className="home-nav-div">
@@ -146,7 +176,12 @@ const FormEditor = () => {
             </Tooltip>
             <Tooltip title="Logout">
               <button
-                onClick={() => setsubAdmin(null)}
+                onClick={() => {
+                  setsubAdmin(null);
+                  localStorage.removeItem("subuser");
+                  setAdmin(null);
+                  localStorage.removeItem("user");
+                }}
                 style={{
                   background: "none",
                   border: "none",
@@ -172,9 +207,9 @@ const FormEditor = () => {
                 value={cat}
                 label="category"
                 onChange={(e) => handleChange(e)}>
-                <MenuItem value={"Marketing"}>Marketing</MenuItem>
-                <MenuItem value={"Finance"}>Finance</MenuItem>
-                <MenuItem value={"Studies"}>Studies</MenuItem>
+                {subcat.map((data) => {
+                  return <MenuItem value={data}>{data}</MenuItem>;
+                })}
               </Select>
             </FormControl>
             <Button variant="contained" className="add-image">
@@ -187,8 +222,7 @@ const FormEditor = () => {
             type="file"
             id="inputImg"
             onChange={(e) => {
-              setimg(e.target.files[0]);
-              console.log(img);
+              handleUploadsImg(e.target.files[0]);
             }}
             style={{ display: "none" }}
           />

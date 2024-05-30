@@ -11,8 +11,9 @@ import validation from "../validation";
 import Drop from "../Drop";
 import { useParams } from "react-router-dom";
 import { MdCoPresent, MdOutlineContentCopy } from "react-icons/md";
-
+import axios from "axios";
 import { MdDelete } from "react-icons/md";
+import { apiConfig } from "../../apiConfig";
 const Form = ({ img, cat }) => {
   const params = useParams().formid;
   console.log(params);
@@ -38,7 +39,7 @@ const Form = ({ img, cat }) => {
 
   const questions = {
     questionText: "what is the....",
-    questionimage: null,
+    questionimage: "",
     questioninputName: "radio",
     questionType: "radio",
     questionregex: null,
@@ -50,10 +51,6 @@ const Form = ({ img, cat }) => {
       { optiontext: "option 4" },
     ],
   };
-
-  useEffect(() => {
-    setform({ ...forms, formImg: img, formCat: cat });
-  }, [img, cat]);
 
   const option = {
     optiontext: "New Option",
@@ -96,11 +93,20 @@ const Form = ({ img, cat }) => {
     que[index].questionText = val;
     setcategory(que);
   };
-  const handleImg = (index, val) => {
-    var que = [...category];
-    que[index].questionimage = val;
-    setId(null);
-    setcategory(que);
+  const handleImg = async (id, myFile) => {
+    console.log("running");
+    try {
+      const formData = new FormData();
+      formData.append("myFile", myFile);
+      const { data } = await axios.post(apiConfig.uplaodImg, formData);
+      var que = [...category];
+      que[id].questionimage = data.image;
+      console.log(que);
+      setId(null);
+      setcategory(que);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const handleOptions = (val) => {
@@ -133,7 +139,7 @@ const Form = ({ img, cat }) => {
 
   const handleMenuItem = () => {
     var i = newfeild;
-    i.regex = new RegExp(newfeild.regext);
+    i.regex = newfeild.regext;
     delete i.regext;
     delete i.inputtype;
     setNewfeild({
@@ -174,19 +180,19 @@ const Form = ({ img, cat }) => {
     setcategory(cat);
   };
 
-  useEffect(() => {
-    {
-      toast((t) => (
-        <span>
-          Welcome to Form Editer here you can create Form for your organization
-          <br />
-          <Button variant="text" onClick={() => toast.dismiss(t.id)}>
-            Dismiss
-          </Button>
-        </span>
-      ));
-    }
-  }, []);
+  // useEffect(() => {
+  //   {
+  //     toast((t) => (
+  //       <span>
+  //         Welcome to Form Editer here you can create Form for your organization
+  //         <br />
+  //         <Button variant="text" onClick={() => toast.dismiss(t.id)}>
+  //           Dismiss
+  //         </Button>
+  //       </span>
+  //     ));
+  //   }
+  // }, []);
 
   return (
     <div>
@@ -195,7 +201,7 @@ const Form = ({ img, cat }) => {
           <div className={forms.formImg ? "form-top form-top-add" : "form-top"}>
             {forms.formImg && (
               <img
-                src={formImg}
+                src={forms.formImg}
                 width={"550px"}
                 height={150}
                 style={{ borderRadius: 10, objectFit: "cover" }}
@@ -255,7 +261,10 @@ const Form = ({ img, cat }) => {
                           type="file"
                           id="i"
                           style={{ display: "none" }}
-                          onChange={(e) => handleImg(id, e.target.files[0])}
+                          onChange={(e) => {
+                            console.log("onchange");
+                            handleImg(id, e.target.files[0]);
+                          }}
                         />
                         <div className="quetion-header-sec">
                           {!data.questionimage && (
@@ -314,6 +323,7 @@ const Form = ({ img, cat }) => {
                           </div>
                         </div>
                       </div>
+
                       {data.questionimage && (
                         <img
                           src={
@@ -432,7 +442,7 @@ const Form = ({ img, cat }) => {
                                 <InputBase
                                   className="new-field"
                                   value={newfeild.field}
-                                  placeholder="Field type'"
+                                  placeholder="Field type(text,password,email)"
                                   onChange={(e) =>
                                     setNewfeild({
                                       ...newfeild,

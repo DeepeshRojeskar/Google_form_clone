@@ -73,7 +73,7 @@ const FormContextProvider = ({ children }) => {
 
   const [menuitem, setmenuitem] = useState([
     {
-      fieldName: "make yours",
+      fieldName: "Make yours",
       field: "make yours",
       regex: null,
       errmessage: "",
@@ -85,7 +85,7 @@ const FormContextProvider = ({ children }) => {
       fieldName: "password",
       field: "password",
       regex:
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/,
+        "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[@.#$!%*?&])[A-Za-zd@.#$!%*?&]{8,15}$",
       errmessage: "Username should contain 8 digit 1 uppercase 1 unique",
     },
     {
@@ -103,7 +103,7 @@ const FormContextProvider = ({ children }) => {
   const [category, setcategory] = useState([
     {
       questionText: "What is the...",
-      questionimage: null,
+      questionimage: "",
       questioninputName: "radio",
       questionType: "radio",
       questionregex: null,

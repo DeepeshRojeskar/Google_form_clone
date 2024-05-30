@@ -58,7 +58,7 @@ function App() {
         <Route
           path="/formEdit/:formid"
           element={
-            <ProtectedRoute user={subadmin || admin}>
+            <ProtectedRoute user={admin || subadmin}>
               <FormEditor />
             </ProtectedRoute>
           }

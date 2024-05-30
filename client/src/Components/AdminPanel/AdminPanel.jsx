@@ -101,16 +101,17 @@ const AdminPanel = () => {
   };
 
   const handlEditform = (val, frmid) => {
-    console.log(frmid);
+    console.log(frmid, val);
     var sub = allForms[val];
-    console.log(sub);
+
+    console.log("sub,form to be edit");
     var cat = allForms[val].category;
 
     setform(sub);
     setcategory(cat);
     setcreate({ ...create, creat: "Update form", cre: false });
 
-    navigate(`formEdit/${frmid}`);
+    navigate(`/formEdit/${frmid}`);
   };
 
   const handlesubcreate = () => {};
@@ -283,7 +284,13 @@ const AdminPanel = () => {
                   <Tooltip
                     title={
                       <div style={{ display: "flex" }}>
-                        <p className="form-action">Form link</p>
+                        <p
+                          className="form-action"
+                          onClick={() => {
+                            navigate(`/fill-form/${allForms[index].formid}`);
+                          }}>
+                          Form link
+                        </p>
                         <p
                           className="form-action-del"
                           onClick={() => {

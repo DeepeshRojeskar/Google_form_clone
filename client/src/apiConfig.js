@@ -13,4 +13,5 @@ export const apiConfig = {
   delete_form: "http://192.168.29.141:3005/sub/deleteform/",
   get_allforms: "http://192.168.29.141:3005/sub/forms",
   get_single: "http://192.168.29.141:3005/sub/form/",
+  uplaodImg: "http://192.168.29.141:3005/uploadFile",
 };

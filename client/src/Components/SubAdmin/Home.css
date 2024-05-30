@@ -76,15 +76,15 @@
 }
 .form-show {
   background-color: rgb(255, 255, 255) !important;
-  height: 150px !important;
-  width: 150px !important;
+  height: 140px !important;
+  width: 140px !important;
   margin: 15px !important;
   color: rgb(0, 0, 0) !important;
   font-weight: 500 !important;
   border-radius: 7px !important;
   padding: 6 !important;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border: 2px solid rgb(155, 155, 155) !important;
+  box-shadow: rgba(166, 166, 166, 0.24) 0px 3px 8px;
+  border: 1px solid rgb(155, 155, 155) !important;
 }
 .home-form-forms {
   padding: 10px 30px;

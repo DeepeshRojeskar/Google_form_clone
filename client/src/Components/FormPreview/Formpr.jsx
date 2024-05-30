@@ -53,11 +53,11 @@ const Formpr = ({ img, cat }) => {
         <div className="section">
           <div
             className={
-              forms.formImg ? "pr-form-top pr-form-top-add" : "pr-form-top"
+              forms?.formImg ? "pr-form-top pr-form-top-add" : "pr-form-top"
             }>
             {forms.formImg && (
               <img
-                src={formImg}
+                src={forms.formImg}
                 width={"200px"}
                 height={50}
                 style={{ borderRadius: 10, objectFit: "cover" }}
@@ -159,7 +159,7 @@ const Formpr = ({ img, cat }) => {
                           <img
                             src={
                               data.questionimage
-                                ? URL.createObjectURL(data.questionimage)
+                                ? data.questionimage
                                 : "./image/user.png"
                             }
                             width={40}

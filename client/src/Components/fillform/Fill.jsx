@@ -11,6 +11,7 @@ import { apiConfig } from "../../apiConfig";
 import { useParams } from "react-router-dom";
 const Fill = () => {
   const { forms, setform, subadmin } = formProvider();
+
   const params = useParams().formid;
   const [fieldform, setfieldform] = useState({
     formid: forms.formid,
@@ -23,6 +24,7 @@ const Fill = () => {
     try {
       const { data } = await axios.get(apiConfig.get_single + params);
       setform(data.form);
+      console.log(forms);
 
       forms.category.map((data) => {
         var ram = { que: data.questionText, ans: null };
@@ -101,7 +103,7 @@ const Fill = () => {
           <div className={forms.formImg ? "form-top form-top-add" : "form-top"}>
             {forms.formImg && (
               <img
-                src={formImg}
+                src={forms.formImg}
                 width={"550px"}
                 height={150}
                 style={{ borderRadius: 10, objectFit: "cover" }}
@@ -142,7 +144,7 @@ const Fill = () => {
                         <img
                           src={
                             data.questionimage
-                              ? questionimage
+                              ? data.questionimage
                               : "./image/user.png"
                           }
                           width={120}
@@ -160,6 +162,7 @@ const Fill = () => {
                               handleAns(e.target.value, index);
                               if (data.questionregex !== null) {
                                 var res = validation({
+                                  data4: data.errmessage,
                                   data: data.questioninputName,
                                   data2: data.questionregex,
                                   data3: e.target.value,
@@ -187,10 +190,10 @@ const Fill = () => {
                               handleAns(e.target.value, index);
                               if (data.questionregex !== null) {
                                 var res = validation({
+                                  data4: data.errmessage,
                                   data: data.questioninputName,
                                   data2: data.questionregex,
                                   data3: e.target.value,
-                                  data4: data.errmessage,
                                 });
                                 handleError(res, index);
                                 seterror(res);

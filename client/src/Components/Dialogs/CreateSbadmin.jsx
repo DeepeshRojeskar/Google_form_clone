@@ -72,6 +72,7 @@ const CreateSbadmin = ({ open, setopen }) => {
       open={open}
       onClose={() => {
         handleClose();
+        setCategory([]);
         setImg(null);
       }}>
       <div className="sbmainDiv">
